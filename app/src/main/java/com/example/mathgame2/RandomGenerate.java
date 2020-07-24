@@ -9,6 +9,7 @@ import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -50,13 +51,42 @@ public class RandomGenerate extends AppCompatActivity {
             //operand.setText("Positive : "+Integer.toString(positive));
         }
 
-        final EditText input = (EditText)findViewById(R.id.editText);
+        //final EditText input = (EditText)findViewById(R.id.editText);
+        ImageButton plus = (ImageButton)findViewById(R.id.PlusButton);
+        ImageButton minus = (ImageButton)findViewById(R.id.MinusButton);
         final int soln=solution;
         Button kick = (Button)findViewById(R.id.button2);
+        final int[] pluscnt = new int[1];
+        final int[] minuscnt = new int[1];
+        plus.setOnClickListener(new View.OnClickListener() {
+            int cnt=0;
+            public void onClick(View v) {
+                TextView plus = (TextView)findViewById(R.id.plusCnt);
+                cnt++;
+                plus.setText(Integer.toString(cnt));
+                pluscnt[0] =cnt;
+            }
+        });
+        minus.setOnClickListener(new View.OnClickListener(){
+            int cnt=0;
+            public void onClick(View v){
+                TextView minus =(TextView)findViewById(R.id.minusCnt);
+                cnt++;
+                minus.setText(Integer.toString(cnt));
+                minuscnt[0] =cnt;
+            }
+        });
+
         kick.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                int answer = Integer.parseInt(input.getText().toString());
-                checkAnswer(answer,soln);
+                if(pluscnt[0] ==0){
+                    checkAnswer(-1*(minuscnt[0]),soln);
+                }
+                else{
+                    checkAnswer(pluscnt[0],soln);
+                }
+                //int answer = Integer.parseInt(input.getText().toString());
+                //checkAnswer(answer,soln);
             }
 
         });
@@ -69,7 +99,7 @@ public class RandomGenerate extends AppCompatActivity {
             result.setText("Yaay! You scored a Goal!!!!!");
         }
         else{
-            result.setText("Better Luck Next Time!!");
+            result.setText(Integer.toString(answer)+" "+Integer.toString(check)+" "+"Better Luck Next Time!!");
         }
 
     }

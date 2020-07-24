@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="43dp"
+        android:layout_height="24dp"
         android:layout_marginTop="100dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,61 +18,107 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="20dp"
-        android:ems="10"
-        android:hint="&quot;What's the goal?&quot;"
-        android:inputType="number|textPersonName"
-        android:textColor="@android:color/background_dark"
-        android:textColorHighlight="@android:color/background_dark"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="100dp"
-        android:text="KICK"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
-
-    <EditText
         android:id="@+id/result"
         android:layout_width="390dp"
         android:layout_height="92dp"
         android:layout_marginStart="107dp"
-        android:layout_marginTop="64dp"
         android:layout_marginEnd="104dp"
-        android:layout_marginBottom="134dp"
+        android:layout_marginBottom="60dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.39" />
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
         android:id="@+id/linear_layout"
-        android:layout_width="406dp"
+        android:layout_width="match_parent"
         android:layout_height="128dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintBottom_toTopOf="@+id/plusCnt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.331"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"></LinearLayout>
+
+    <TextView
+        android:id="@+id/plusCnt"
+        android:layout_width="75dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="258dp"
+        android:layout_marginBottom="200dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.308"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear_layout" />
+
+    <ImageButton
+        android:id="@+id/PlusButton"
+        android:layout_width="75dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="220dp"
+        android:layout_marginBottom="200dp"
+        app:layout_constraintBottom_toTopOf="@+id/result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/plusCnt"
+        app:layout_constraintTop_toBottomOf="@+id/linear_layout"
+        app:layout_constraintVertical_bias="0.638"
+        app:srcCompat="@drawable/plus" />
+
+    <TextView
+        android:id="@+id/minusCnt"
+        android:layout_width="75dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="200dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@+id/PlusButton"
+        app:layout_constraintTop_toBottomOf="@+id/linear_layout"
+        app:layout_constraintVertical_bias="0.163" />
+
+    <ImageButton
+        android:id="@+id/MinusButton"
+        android:layout_width="75dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="207dp"
+        app:layout_constraintBottom_toTopOf="@+id/result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.264"
+        app:layout_constraintStart_toEndOf="@+id/minusCnt"
+        app:layout_constraintTop_toBottomOf="@+id/linear_layout"
+        app:layout_constraintVertical_bias="0.628"
+        app:srcCompat="@drawable/minus" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="200dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="370dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginBottom="10dp"
+        android:text="KICK"
+        app:layout_constraintBottom_toTopOf="@+id/result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
